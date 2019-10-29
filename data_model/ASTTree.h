@@ -1,0 +1,14 @@
+//
+// Created by dobrowol on 29.10.2019.
+//
+
+#ifndef EXPRESSIONEVALUATOR_ASTTREE_H
+#define EXPRESSIONEVALUATOR_ASTTREE_H
+
+
+class ASTTree {
+
+};
+
+
+#endif //EXPRESSIONEVALUATOR_ASTTREE_H

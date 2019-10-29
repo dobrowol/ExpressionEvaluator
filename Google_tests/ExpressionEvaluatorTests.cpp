@@ -5,11 +5,19 @@
 #include "../ExpressionEvaluator.cpp"
 #include "../exceptions/LiteralTooBig.cpp"
 #include "../exceptions/NegativeLiteralOrUnaryMinus.h"
+#include "mocks/EvaluatorMock.h"
+#include "mocks/ParserMock.h"
 
 namespace {
     class ExpressionEvaluatorTest : public ::testing::Test {
     protected:
-        ExpressionEvaluator expressionEvaluator;
+        ExpressionEvaluator<ASTTree, int> expressionEvaluator;
+        std::unique_ptr<ParserMock> parserMock;
+        std::unique_ptr<EvaluatorMock> evaluatorMock;
+    public:
+        ExpressionEvaluatorTest(): expressionEvaluator(parserMock, evaluatorMock){
+
+        }
     };
 
 

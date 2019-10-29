@@ -1,0 +1,14 @@
+//
+// Created by dobrowol on 29.10.2019.
+//
+
+#ifndef EXPRESSIONEVALUATOR_ASTPARSER_H
+#define EXPRESSIONEVALUATOR_ASTPARSER_H
+
+
+class ASTParser {
+
+};
+
+
+#endif //EXPRESSIONEVALUATOR_ASTPARSER_H
