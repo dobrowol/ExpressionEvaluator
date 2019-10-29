@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_subdirectory(Google_tests)
 
-add_executable(ExpressionEvaluator main.cpp  ExpressionEvaluator.cpp)
+add_executable(ExpressionEvaluator main.cpp  ExpressionEvaluator.cpp exceptions/LiteralTooBig.cpp exceptions/NegativeLiteralOrUnaryMinus.h)
