@@ -6,7 +6,18 @@
 #define EXPRESSIONEVALUATOR_ASTPARSER_H
 
 
-class ASTParser {
+#include "Parser.h"
+
+class ASTParser : public Parser {
+    std::string expression;
+    std::string::const_iterator current_token;
+
+    void eatToken(char token);
+    std::shared_ptr<ASTTree> expr();
+    std::shared_ptr<ASTTree> term();
+    std::shared_ptr<ASTTree> factor();
+public:
+    std::shared_ptr<ASTTree> parse(std::string) override;
 
 };
 

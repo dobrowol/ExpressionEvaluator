@@ -8,7 +8,7 @@
 #include "gmock/gmock.h"
 #include "../../parser/Parser.h"
 
-class ParserMock : public Parser<ASTTree> {
+class ParserMock : public Parser {
 public:
     MOCK_METHOD(std::shared_ptr<ASTTree>, parse, (std::string), (override));
 };

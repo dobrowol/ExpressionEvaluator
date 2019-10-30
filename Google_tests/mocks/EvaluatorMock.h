@@ -8,7 +8,7 @@
 #include "gmock/gmock.h"
 #include "../../evaluator/Evaluator.h"
 
-class EvaluatorMock : public Evaluator<ASTTree, int> {
+class EvaluatorMock : public Evaluator {
 public:
     MOCK_METHOD(int, evaluate, (std::shared_ptr<ASTTree>), (override));
 };

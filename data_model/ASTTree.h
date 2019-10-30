@@ -6,7 +6,11 @@
 #define EXPRESSIONEVALUATOR_ASTTREE_H
 
 
-class ASTTree {
+#include "Node.h"
+
+struct ASTTree {
+
+    virtual int evaluate() = 0;
 
 };
 

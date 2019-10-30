@@ -9,10 +9,9 @@
 #include <memory>
 #include "../data_model/ASTTree.h"
 
-template<class DataModel>
 class Parser {
 public:
-    virtual std::shared_ptr<DataModel> parse(std::string expression) = 0;
+    virtual std::shared_ptr<ASTTree> parse(std::string) = 0;
 };
 
 

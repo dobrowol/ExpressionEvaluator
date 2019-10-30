@@ -5,10 +5,10 @@
 #ifndef EXPRESSIONEVALUATOR_EVALUATOR_H
 #define EXPRESSIONEVALUATOR_EVALUATOR_H
 
-template<class DataModel, class Result>
+
 class Evaluator {
 public:
-    virtual Result evaluate(std::shared_ptr<DataModel> dataModel) = 0;
+    virtual int evaluate(std::shared_ptr<ASTTree> dataModel) = 0;
 };
 
 
