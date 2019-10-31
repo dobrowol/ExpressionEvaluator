@@ -5,6 +5,8 @@
 #include "ASTParser.h"
 #include "../data_model/Integer.h"
 #include "../data_model/Operation.h"
+#include "../exceptions/LiteralTooBig.h"
+#include "../exceptions/NegativeLiteralOrUnaryMinus.h"
 
 std::shared_ptr<ASTTree> ASTParser::parse(std::string expression){
     this->expression = expression;
@@ -13,6 +15,9 @@ std::shared_ptr<ASTTree> ASTParser::parse(std::string expression){
 }
 
 std::shared_ptr<ASTTree> ASTParser:: expr() {
+    if(*current_token == '-'){
+        throw NegativeLiteralOrUnaryMinus();
+    }
     std::shared_ptr<ASTTree> node = term();
 
     while(*current_token == '+' || *current_token == '-'){
@@ -47,6 +52,9 @@ std::shared_ptr<ASTTree> ASTParser:: factor() {
     std::shared_ptr<ASTTree> node;
     if(isdigit(token)) {
         eatToken(token);
+        if(isdigit(*current_token)){
+            throw LiteralTooBig();
+        }
         node = std::make_shared<Integer>(token);
     }
     else if(token =='('){

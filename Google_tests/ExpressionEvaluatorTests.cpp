@@ -4,7 +4,7 @@
 #include <memory>
 #include "gtest/gtest.h"
 #include "../ExpressionEvaluator.cpp"
-#include "../exceptions/LiteralTooBig.cpp"
+#include "../exceptions/LiteralTooBig.h"
 #include "../exceptions/NegativeLiteralOrUnaryMinus.h"
 #include "mocks/EvaluatorMock.h"
 #include "mocks/ParserMock.h"
@@ -35,18 +35,5 @@ namespace {
 
     //    auto ret = expressionEvaluator.evaluate("(4 + 5 * (7 - 3)) - 2");
     //    EXPECT_EQ(ret, 12);
-    }
-
-    TEST_F(ExpressionEvaluatorTest, shouldAlsoParse) {
-      //  auto ret = expressionEvaluator.evaluate("2 + 3 + 4");
-     //   EXPECT_EQ(ret, 9);
-    }
-
-    TEST_F(ExpressionEvaluatorTest, literalTooBig) {
-   //     EXPECT_THROW(expressionEvaluator.evaluate("10 + 25000000000000"), LiteralTooBig);
-    }
-
-    TEST_F(ExpressionEvaluatorTest, negativeLiteralOrUnaryMinus) {
-     //   EXPECT_THROW(expressionEvaluator.evaluate("-10"), NegativeLiteralOrUnaryMinus);
     }
 }
