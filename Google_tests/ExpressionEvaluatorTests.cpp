@@ -33,7 +33,6 @@ namespace {
         EXPECT_CALL(*evaluatorMock, evaluate(_)).WillOnce(Return(12));
         EXPECT_CALL(*parserMock, parse("(4 + 5 * (7 - 3)) - 2")).WillOnce(Return(tree));
 
-    //    auto ret = expressionEvaluator.evaluate("(4 + 5 * (7 - 3)) - 2");
-    //    EXPECT_EQ(ret, 12);
+        expressionEvaluator.evaluate("(4 + 5 * (7 - 3)) - 2");
     }
 }
