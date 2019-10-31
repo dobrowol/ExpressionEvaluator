@@ -19,7 +19,14 @@ struct Operation : public ASTTree{
 
     int evaluate() override {
         if(operation == '+')
-            return right->evaluate() + left->evaluate();
+            return left->evaluate() + right->evaluate();
+        else if(operation == '-')
+            return left->evaluate() - right->evaluate();
+        else if(operation == '*')
+            return left->evaluate() * right->evaluate();
+        else if(operation == '/')
+            return left->evaluate() / right->evaluate();
+
     }
 };
 #endif //EXPRESSIONEVALUATOR_OPERATION_H

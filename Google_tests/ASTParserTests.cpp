@@ -20,4 +20,12 @@ namespace {
         EXPECT_EQ(op->operation, '-');
         EXPECT_EQ(astEvaluator.evaluate(tree), 22);
     }
+
+    TEST_F(ASTParserTest, shouldAlsoParse){
+        std::shared_ptr<ASTTree> tree;
+        ASSERT_NO_THROW(tree = astParser.parse("4+5+7/2"));
+        Operation* op = dynamic_cast<Operation*>(tree.get());
+        EXPECT_EQ(op->operation, '+');
+        EXPECT_EQ(astEvaluator.evaluate(tree), 12);
+    }
 }
